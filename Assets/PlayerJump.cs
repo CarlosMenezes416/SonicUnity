@@ -11,6 +11,8 @@ public class PlayerJump : MonoBehaviour
     bool isFloored;
     bool isJumping;
     bool animation;
+
+
     public float JumpStrength;
     public float AngleOfContact;
 
@@ -21,7 +23,7 @@ public class PlayerJump : MonoBehaviour
         isFloored = Physics2D.OverlapCircle(GroundChecker.position,
                                             AngleOfContact,
                                             isGrounded);
-        if(isFloored)
+        if (isFloored)
         {
             animation = true;
         }
@@ -29,7 +31,7 @@ public class PlayerJump : MonoBehaviour
         {
             animation = false;
         }
-        if(animation)
+        if (animation)
         {
             GetComponent<Animator>().SetBool("Jump", false);
         }
@@ -50,7 +52,7 @@ public class PlayerJump : MonoBehaviour
             Sonic.AddForce(new Vector2(0, JumpStrength));
             isJumping = false;
         }
+
+
     }
-
-
 }

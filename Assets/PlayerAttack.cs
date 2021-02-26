@@ -2,17 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class PlayerAttack : MonoBehaviour
 {
-    // Start is called before the first frame update
+ 
+    public LayerMask isGrounded;
+    bool sawOff;
+    bool sawOn;
+    bool animation;
+
+    Animator animator;
+
+    public float AngleOfContact;
+
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
+        Rigidbody2D Sonic = GetComponent<Rigidbody2D>();
+
         
+
+       
+
+        bool attackKey = Input.GetAxisRaw("Fire1") == 1f;
+        if (attackKey)
+        {
+ 
+            animator.SetBool("Saw", true);
+        }
+
+
+
     }
 }
+
